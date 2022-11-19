@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <input placeholder="Brand" id="txtBrand">
+    <input placeholder="Model" id="txtModel" />
+    <input placeholder="Price" id="txtPrice" type="number" />
+    <button onclick="addProduct()">Add</button>
+    <button onclick="showAll()">Show All</button>
+    <button onclick="showAboutThousand()">ShowOnlyAbove1000</button>
+
+    <hr>
+    <input placeholder="Search"><button>Search</button>
+    <hr>
+    <div id="output"></div>
+    <script>
+        let products = [];
+
+        function showAll() {
+            showProducts(products)
+        }
+
+        function showAboutThousand() {
+            let tempArray = products.filter(x => x.price >= 1000)
+            showProducts(tempArray)
+        }
+
+        function showProducts(array) {
+            output.innerHTML = ""
+            for (const item of array) {
+                output.innerHTML += `<div> ${item.brand} ${item.model} ${item.price} </div>`
+            }
+        }
+
+        function addProduct() {
+            let p1 = {
+                brand: txtBrand.value,
+                model: txtModel.value,
+                price: txtPrice.value,
+            }
+
+            products.push(p1)
+
+
+            console.log('added')
+            console.log(products)
+        }
+    </script>
+</body>
+
+</html>

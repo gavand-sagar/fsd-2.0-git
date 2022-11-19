@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .alert {
+            animation: blink 1s infinite
+        }
+
+        @keyframes blink{
+            0%{
+                color:red;
+                font-size: 10px;
+            }
+            100%{
+                color:blue;
+                font-size:20px;                
+            }           
+        }
+
+    </style>
+</head>
+
+<body>
+
+    
+
+    <h1 style="" class="red sagar sachin">Content1</h1>
+
+    <h1 style="" class="red sagar sachin">Content2</h1>
+
+    <input type="number" id='myInput' />
+    <button onclick="doSomething()">Get Square</button>
+    <br>
+    <div id="output" style="color:red" class="sagar"></div>
+
+    <script>
+
+
+let number = 10
+number = 20;
+number = 50;
+        
+        function doSomething() {
+            output.style.color = 'green'
+            
+            myInput.classList.add('sagar')
+            myInput.classList.add('alert')
+
+
+            let square = myInput.value * myInput.value
+
+            if (isNaN(square)) {
+                alert('invalid input')
+            } else {
+                output.innerHTML = '<h1 class="alert">Alert</h1>'
+                if (square > 100) {
+                    output.style.color = 'orange'
+                }
+                if (square > 200) {
+                    output.style.color = 'red'
+                }
+            }
+
+
+        }
+
+        // function doSomething() {
+        //     let square = myInput.value * myInput.value
+        //     output.innerHTML = square
+
+        //     if (square > 200) {
+        //         output.style.color = 'red'
+        //     }
+
+        //     if (square > 100 && square < 200) {
+        //         output.style.color = 'orange'
+        //     }
+
+        //     if (square < 100) {
+        //         output.style.color = 'green'
+        //     }
+        // }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <span>Mango</span>
+    <span class="tobechagned">Banana</span>
+    <span>Kiwi</span>
+    <span class="tobechagned">Grape</span>
+    <span class="tobechagned">Pineapple</span>
+
+
+    <p>asf</p>
+    <p class="tobechagned">asfjasdhfj</p>
+    <p>hjhjlkh</p>
+
+    <button onclick="magic()">Magic</button>
+
+    <script>
+        function magic() {
+
+            let allSpansInDocument = document.querySelectorAll('.tobechagned')
+
+            for (let item of allSpansInDocument) {
+                let prevText = item.innerHTML;
+                item.innerHTML = prevText[0] + prevText[1] + prevText[2] + "..."
+            }
+
+        }
+    </script>
+
+</body>
+
+</html>
