@@ -37,3 +37,26 @@
 body{
   background-color:rgb(230, 230, 230)
 }
+
+
+.accordion-container{
+  margin:10px;
+  border:1px solid gray;
+  padding:10px
+}
+
+.accordion-header{
+  border-bottom: 1px solid gray;
+  color:blue;
+  font-size: 1.5rem;
+}
+
+.accordion-body{
+  height: 100px;
+  transition: 5s;
+  overflow: hidden;
+}
+
+.accordion-body.hidden{
+  height: 0;
+}

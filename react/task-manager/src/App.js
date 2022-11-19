@@ -6,11 +6,15 @@ import MagicalCounter from "./Counter.js";
 import Post from "./Post";
 import Counter from "./Counter.js";
 import TikTok from "./TikTok";
+import Accordion from "./Accordion";
 
 function App() {
   return (
     <div className="App">
-      <TikTok />
+
+      <Accordion header={'This is header'} body={'<s f asfsft asdomBuasdfttoa sf asf n text={"HTML"} isOrange={true}/>'}/>
+
+      {/* <TikTok /> */}
       {/* <Counter start={10}></Counter> */}
 
       {/* <MagicalCounter/> */}
@@ -27,9 +31,9 @@ function App() {
       {/* <input/>
       <hr></hr> */}
 
-      <CustomButton text={"HTML"} isOrange={true}/>
+      {/* <CustomButton text={"HTML"} isOrange={true}/>
       <CustomButton text={"CSS"} isOrange={false}></CustomButton>
-      <CustomButton text={"Javascript"}  isOrange={true}></CustomButton>
+      <CustomButton text={"Javascript"}  isOrange={true}></CustomButton> */}
     </div>
   );
 }
