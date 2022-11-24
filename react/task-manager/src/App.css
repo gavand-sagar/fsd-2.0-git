@@ -53,10 +53,29 @@ body{
 
 .accordion-body{
   height: 100px;
-  transition: 5s;
+  transition: 1s;
   overflow: hidden;
 }
 
 .accordion-body.hidden{
   height: 0;
+}
+
+.red{
+  background:linear-gradient(to top right,purple,red);
+  display:inline-block;
+  padding: 5px;
+  height: 2rem;
+  box-sizing: border-box;
+  border-radius: 1rem;
+  color:rgb(223, 223, 223);
+}
+.blue{
+  background:linear-gradient(to top right,purple,skyblue);
+  display:inline-block;
+  padding: 5px;
+  height: 2rem;
+  box-sizing: border-box;
+  border-radius: 1rem;
+  color:rgb(223, 223, 223);
 }

@@ -7,13 +7,19 @@ import Post from "./Post";
 import Counter from "./Counter.js";
 import TikTok from "./TikTok";
 import Accordion from "./Accordion";
+import RoundedButton from "./RoundedButton";
 
 function App() {
   return (
     <div className="App">
 
-      <Accordion header={'This is header'} body={'<s f asfsft asdomBuasdfttoa sf asf n text={"HTML"} isOrange={true}/>'}/>
+      <RoundedButton label={'React'} active={true}></RoundedButton>
+      <RoundedButton label={'Node.js'}></RoundedButton>
+      <RoundedButton label={'Javascript'}></RoundedButton>
 
+      {/* <Accordion header={'This is header'} body={'<s f asfsft asdomBuasdfttoa sf asf n text={"HTML"} isOrange={true}/>'}/> */}
+
+      {/* <Accordion header={'Some other heading'} body={'blah blah blah'}/> */}
       {/* <TikTok /> */}
       {/* <Counter start={10}></Counter> */}
 

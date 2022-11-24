@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 
+//object destructuring
 export default function Accordion({ header, body }) {
   const [active, setActive] = useState(true);
 
@@ -13,8 +14,12 @@ export default function Accordion({ header, body }) {
 
   return (
     <div className="accordion-container">
-      <div onClick={toggle} className="accordion-header">{header}</div>
-      <div className={active?"accordion-body":"accordion-body hidden"}>{body}</div>
+      <div onClick={toggle} className="accordion-header">
+        {header}
+      </div>
+      <div className={active ? "accordion-body" : "accordion-body hidden"}>
+        {body}
+      </div>
     </div>
   );
 }
