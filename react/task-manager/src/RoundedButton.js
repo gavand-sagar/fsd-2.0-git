@@ -17,5 +17,5 @@ export default function RoundedButton({ label, active }) {
 //     }
 //   }
 
-  return <div className={getClassName()}>{label}</div>;
+  return (<div className={getClassName()}>{label}</div>);
 }

@@ -8,14 +8,19 @@ import Counter from "./Counter.js";
 import TikTok from "./TikTok";
 import Accordion from "./Accordion";
 import RoundedButton from "./RoundedButton";
+import Rating from "./Rating";
 
 function App() {
   return (
     <div className="App">
 
-      <RoundedButton label={'React'} active={true}></RoundedButton>
-      <RoundedButton label={'Node.js'}></RoundedButton>
-      <RoundedButton label={'Javascript'}></RoundedButton>
+      <Rating value={3}/>
+      <Rating value={4}/>
+      <Rating value={2}/>
+
+      {/* <RoundedButton label={'React'} active={true}></RoundedButton> */}
+      {/* <RoundedButton label={'Node.js'}></RoundedButton> */}
+      {/* <RoundedButton label={'Javascript'}></RoundedButton> */}
 
       {/* <Accordion header={'This is header'} body={'<s f asfsft asdomBuasdfttoa sf asf n text={"HTML"} isOrange={true}/>'}/> */}
 
