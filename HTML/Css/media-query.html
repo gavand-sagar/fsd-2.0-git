@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            box-sizing: border-box;
+        }
+
+        .header {
+            background-color: orange;
+            height: 70px;
+            padding: 1rem;
+        }
+
+        .content {
+            padding: 1rem;
+            height:auto;
+            background-color: skyblue;
+        }
+
+
+
+        .blue{
+            background-color:blue;
+            width:400px;
+            height: 80px;
+            overflow-x:scroll ;
+        }
+
+        .red{
+            background-color: red;
+            width: 500px;
+            height: 50px;
+        }
+
+        @media print {
+            h1 {
+                font-size: 1.5rem;
+            }
+        }
+
+
+        @media screen and (max-width:767px) {
+            .header {
+                background-color: orange;
+                padding: 0;
+                position: fixed;
+                width: 5px;
+                opacity: 0;
+                overflow: hidden;
+                height: 100%;
+                transition: 0.5s;
+            }
+
+
+            .header:hover {
+                width: 100px;
+                opacity: 1;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        this is the header
+    </div>
+    <div class="content">
+        the content areathis is the content areathis is the content areathis<br>
+        this is the content areathis is <br>
+        is the content area
+        this is the content areathis is <br>
+        the content areathis is the content areathis is the content areathis<br>
+        is the content area
+        this is the content areathis is <br>
+        the content areathis is the content areathis is the content areathis<br>
+        is the content area
+    </div>
+
+    <!-- <div class="blue">
+        <div class="red"></div>
+    </div> -->
+</body>
+
+</html>

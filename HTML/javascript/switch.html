@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>Type what you want, and click the button</h3>
+    <input id="userInput">
+    <button onclick="getMeThis()">Get Me This</button>
+
+    <script>
+
+        let outcome = 1 < 2 ? "C" : 3 > 2 ? "A" : "B";
+
+        if (1 < 2) {
+            outcome = "C"
+        } else if (3 > 2) {
+            outcome = "A"
+        } else {
+            outcome = "B"
+        }
+
+
+        truthy | falsy
+
+
+        function getOrange() {
+            alert('Here is an orange for you!');
+            console.log('sjkd')
+            console.log('sjkd')
+        }
+
+        function getMeThis() {
+            switch (userInput.value) {
+                case "Orange":
+                    getOrange()
+                    break;
+
+                case "Mango":
+                    alert('Here is a Mango for you!')
+                    break;
+
+                case "Apple":
+                    alert('Sorry Apples are out of stock!')
+                    break;
+
+                default:
+                    alert('Invalid Entry')
+                    break;
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="inputTxt" onmouseleave="loadData()" />
+    <hr>
+    <div id="output">
+
+    </div>
+    <button onclick="loadData()">checkDuplicate</button>
+    <script>
+
+        // let items = ["Mango", "Apple", "Banana", "Kiwi", "Grape"]
+
+        // function loadData() {
+        //     output.innerHTML = ''
+        //     let inputValue = inputTxt.value
+        //     for (let fruit of items) {
+        //         if (fruit.toLowerCase().includes(inputValue.toLowerCase())) {
+        //             output.innerHTML += `<div>${fruit}</div>`
+        //         }
+        //     }
+        // }
+
+        function loadData() {
+            let array = [78, 5, 89, 64, 12, 35, 8];
+            let itemToLookFor = 12;
+
+            let isFound = false;
+            //lets go through every single item from array and check if that item present
+            for (let itemInArray of array) {
+                //this logic(block of code)
+                //will get executed for every single item in collection
+                if (itemInArray == itemToLookFor) {
+                    console.log('Found')
+                }
+            }
+
+            console.log('Not Found')
+
+            // let isFound = array.includes(itemInArray => itemInArray == itemToLookFor)
+
+            // if (isFound == true) {
+            //     console.log('Found')
+            // } else {
+            //     console.log('Not Found')
+            // }
+
+
+        }
+
+
+        function reverse() {
+            let array = [78, 5, 89, 64, 12, 35, 8];
+            let reversedArray = []
+
+            //to create a copy to pop everything
+            // let tempArray = array.filter(item => true);
+            // let tempArray = array.map(item => item);
+            //let tempArray = array.concat([]);
+            let tempArray = [...array] //spread operator
+            
+            while (tempArray.length > 0) {
+                let item = tempArray.pop();
+                reversedArray.push(item)
+            }
+
+            console.log(array)
+            console.log(reversedArray)
+
+        }
+
+
+
+        function loadData() {
+            let array = [78, 5, 89, 64, 12, 35, 8];
+            let itemToLookFor = 35;
+
+            // let index = -1;
+            // let counter = -1;
+            // //lets go through every single item from array and check if that item present
+            // for (let itemInArray of array) {
+            //     //this logic(block of code)
+            //     //will get executed for every single item in collection
+            //     counter++;
+            //     if (itemInArray == itemToLookFor) {
+            //         index = counter
+            //     }
+            // }
+            let reversedArray = []
+            for (let index = array.length - 1; index >= 0; index--) {
+                reversedArray.push(array[index])
+            }
+
+            let index = array.indexOf(itemToLookFor)
+            console.log(index)
+
+
+
+
+        }
+
+
+        function checkDuplicate() {
+            let array = [78, 5, 89, 64, 12, 35, 8];
+            let itemToLookFor = 12;
+            let count = 0;
+            let isFound = false;
+            // //lets go through every single item from array and check if that item present
+            for (let itemInArray of array) {
+                //     //this logic(block of code)
+                //     //will get executed for every single item in collection
+                debugger;
+                if (itemInArray == itemToLookFor) {
+                    count++;
+                }
+            }
+
+            if (count > 1) {
+                console.log('Yes duplicated ' + count + ' times.')
+            } else {
+                console.log('Not duplicated.')
+            }
+
+        }
+
+
+        function checkDuplicateVersion2() {
+            let array = [78, 5, 89, 64, 12, 35, 8];
+            let itemToLookFor = 12;
+            let count = array.filter(itemInArray => itemInArray == itemToLookFor).length;
+
+            if (count > 1) {
+                console.log('Yes duplicated ' + count + ' times.')
+            } else {
+                console.log('Not duplicated.')
+            }
+
+        }
+
+        function filterItems() {
+            let mainArray = [78, 56, 45, 78, 12, 89, 65];
+            let items = [];
+
+            items = mainArray.filter((x) => x > 60);
+            console.log(items);
+
+        }
+
+        function filterItemsWithoutPrototype() {
+            let Array = [78, 56, 45, 78, 12, 89, 65];
+            let items = [];
+
+            for (let itemInArray of Array) {
+                //     //this logic(block of code)
+                //     //will get executed for every single item in collection
+                if (itemInArray > 60) {
+                    items.push(itemInArray);
+                }
+            }
+
+            console.log(items);
+
+        }
+
+
+    </script>
+</body>
+
+</html>

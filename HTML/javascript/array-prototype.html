@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <input id="inputText">
+    <button onclick="add()">Add To Array</button>
+    <button onclick="displayAll()">Display</button>
+    <button onclick="onlyThatContainsLetterA()">Only Of A</button>
+    <button onclick="loweCaseEverything()">LowerCase</button>
+
+    <div id="output"></div>
+    <script>
+
+        let MainArray = [];
+        let items = []
+
+        function add() {
+            MainArray.push(inputText.value)
+            inputText.value = ""
+            displayAll()
+        }
+
+        function onlyThatContainsLetterA() {
+
+            items = MainArray.filter(sagar => sagar.includes('a'))
+            display();
+        }
+
+        function loweCaseEverything() {
+            items = MainArray.map(x => x.toLowerCase())
+            display();
+        }
+
+        function displayAll() {
+            items = MainArray;
+            display();
+        }
+
+        function display() {
+
+            output.innerHTML = "" // clear the html first
+
+            if (items.length == 0) {
+                output.innerHTML = "No Record Found"
+            }
+            for (let value of items) {
+                output.innerHTML += `<div>${value}</div>`
+            }
+        }
+    </script>
+</body>
+
+</html>
