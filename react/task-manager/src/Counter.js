@@ -1,15 +1,20 @@
 import React, { useState } from "react";
 
-export default function Counter({ start }) {
-  const [number,setNumber] = useState(start); // its a hook 
+export default function Counter({ start, counterChanged }) {
+  const [number, setNumber] = useState(start); // its a hook
 
   function increment() {
-    setNumber(number + 1) /// this is a function , which will help us to change number variables value
+    counterChanged(number + 1);
+    setNumber(number + 1); /// this is a function , which will help us to change number variables value
+  }
+
+  function decrement() {
+    setNumber(number - 1); /// this is a function , which will help us to change number variables value
   }
 
   return (
     <div>
-      <button>-</button>
+      <button onClick={decrement}>-</button>
       <span>{number}</span>
       <button onClick={increment}>+</button>
     </div>

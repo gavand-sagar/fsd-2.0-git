@@ -1,50 +1,36 @@
 import logo from "./logo.svg";
 import "./App.css";
-import Sagar from "./Sagar";
-import CustomButton from "./CustomButton";
-import MagicalCounter from "./Counter.js";
-import Post from "./Post";
-import Counter from "./Counter.js";
-import TikTok from "./TikTok";
-import Accordion from "./Accordion";
-import RoundedButton from "./RoundedButton";
+import Counter from "./Counter";
+import { useState } from "react";
 import Rating from "./Rating";
-
+import Names from "./Names";
+import FormDemo from "./FormDemo";
 function App() {
+  const [ratingValue, setRatingValue] = useState(0);
+
+  const [items, setItem] = useState(["Apple", "Samsung", "HTC", "Nokia"]);
+
+  //function that will delete an Item
+  function deleteItem(itemName) {
+    //need to implement the function
+    let newItems = [];
+    for (const item of items) {
+      if (itemName != item) {
+        newItems.push(item);
+      }
+    }
+    setItem(newItems);
+  }
+
   return (
     <div className="App">
+      {/* <Names items={items} deleteItem={deleteItem} /> */}
 
-      <Rating value={3}/>
-      <Rating value={4}/>
-      <Rating value={2}/>
+      {/* <Rating ratingChanged={setRatingValue}/>
 
-      {/* <RoundedButton label={'React'} active={true}></RoundedButton> */}
-      {/* <RoundedButton label={'Node.js'}></RoundedButton> */}
-      {/* <RoundedButton label={'Javascript'}></RoundedButton> */}
+      <h1>{ratingValue}</h1> */}
 
-      {/* <Accordion header={'This is header'} body={'<s f asfsft asdomBuasdfttoa sf asf n text={"HTML"} isOrange={true}/>'}/> */}
-
-      {/* <Accordion header={'Some other heading'} body={'blah blah blah'}/> */}
-      {/* <TikTok /> */}
-      {/* <Counter start={10}></Counter> */}
-
-      {/* <MagicalCounter/> */}
-
-      {/* 
-    <Sagar></Sagar>
-    <Sagar></Sagar>
-    <Sagar></Sagar> */}
-
-      {/* <Post heading={'This was funny'} author={'Homer Simpson'} body={"So I Saw blah blah blah."}></Post>
-      <Post heading={'Ohh Really?'} author={'Sagar'} body={"So I Saw blah blah blah."}/> */}
-
-
-      {/* <input/>
-      <hr></hr> */}
-
-      {/* <CustomButton text={"HTML"} isOrange={true}/>
-      <CustomButton text={"CSS"} isOrange={false}></CustomButton>
-      <CustomButton text={"Javascript"}  isOrange={true}></CustomButton> */}
+      <FormDemo/>
     </div>
   );
 }
