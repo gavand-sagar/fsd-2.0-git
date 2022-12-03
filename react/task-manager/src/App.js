@@ -1,36 +1,29 @@
-import logo from "./logo.svg";
 import "./App.css";
-import Counter from "./Counter";
-import { useState } from "react";
-import Rating from "./Rating";
-import Names from "./Names";
-import FormDemo from "./FormDemo";
-function App() {
-  const [ratingValue, setRatingValue] = useState(0);
-
-  const [items, setItem] = useState(["Apple", "Samsung", "HTC", "Nokia"]);
-
-  //function that will delete an Item
-  function deleteItem(itemName) {
-    //need to implement the function
-    let newItems = [];
-    for (const item of items) {
-      if (itemName != item) {
-        newItems.push(item);
-      }
-    }
-    setItem(newItems);
-  }
+import { Routes, Route } from "react-router-dom";
+import About from "./pages/about/About";
+import Dashboard from "./pages/dashboard/Dashboard";
+import Login from "./pages/login/Login";
+import ProductList from "./pages/products/ProductList";
+import SignUp from "./pages/sign-up/SignUp";
+import NotFound from "./shared/components/NotFound";
+import Header from "./shared/components/Header";
+function App() {  
 
   return (
     <div className="App">
-      {/* <Names items={items} deleteItem={deleteItem} /> */}
+      <Header/>
+      <hr/>
+      
+      <Routes>
+        <Route path="/about" element={<About />}></Route>
+        <Route path="/dashboard" element={<Dashboard />}></Route>
+        <Route path="/login" element={<Login />}></Route>
+        <Route path="/products" element={<ProductList />}></Route>
+        <Route path="/sign-up" element={<SignUp />}></Route>
+        <Route path="*" element={<NotFound />}></Route>
+      </Routes>
 
-      {/* <Rating ratingChanged={setRatingValue}/>
-
-      <h1>{ratingValue}</h1> */}
-
-      <FormDemo/>
+     
     </div>
   );
 }
