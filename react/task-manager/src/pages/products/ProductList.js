@@ -1,7 +1,9 @@
 import React from "react";
+import useRouteProtector from "../../shared/hooks/useRouteProtector";
 import Product from "./Product";
 
 export default function ProductList() {
+  useRouteProtector();
   let products = [
     {
       name: "Apple iPhone 11",

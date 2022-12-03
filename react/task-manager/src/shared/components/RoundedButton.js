@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function RoundedButton({ label, active, setLabel, onClick }) {
+export default function RoundedButton({ children, active, setLabel, onClick}) {
   function getClassName() {
     if (active == true) {
       return "blue";
@@ -18,7 +18,7 @@ export default function RoundedButton({ label, active, setLabel, onClick }) {
 
   return (
     <button onClick={showAlert} className={getClassName()}>
-      {label}
+      {children}
     </button>
   );
 }

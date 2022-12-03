@@ -11,11 +11,12 @@ export default function Login() {
   function login() {
     if (usernameInput == "Sagar" && passwordInput == "123") {
       
+      localStorage.setItem('isLoggedIn','true')
+
       navigate('/dashboard')
-      //alert("Welcome");
-      //redirect to dashboard
-      //but how
+
     } else {
+      localStorage.setItem('isLoggedIn','false')
       alert("Invalid");
     }
   }
