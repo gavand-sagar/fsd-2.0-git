@@ -1,7 +1,7 @@
 import React from "react";
 
 export default function RoundedButton({ children, active, setLabel, onClick}) {
-  function getClassName() {
+  const getClassName = () => {
     if (active == true) {
       return "blue";
     } else {

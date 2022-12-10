@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
-export default function Counter({ start }) {
+export default function Counter({ start }) {  
   const [number, setNumber] = useState(start); // its a hook
 
   const [spanStyles, setSpanStyles] = useState({
@@ -21,6 +21,12 @@ export default function Counter({ start }) {
   function decrement() {
     setNumber(number - 1); /// this is a function , which will help us to change number variables value
   }
+
+  // useEffect(()=>{
+
+  //   let abc = <asdf></asdf>
+    
+  // },[])
 
   return (
     <div>

@@ -7,23 +7,36 @@ import ProductList from "./pages/products/ProductList";
 import SignUp from "./pages/sign-up/SignUp";
 import NotFound from "./shared/components/NotFound";
 import Header from "./shared/components/Header";
+import useRouteProtector from './shared/hooks/useRouteProtector.js'
+import UserDataContext from "./shared/data/UserGlobalData";
+import { useState } from "react";
+
+function ProtectedRoute({children}){
+  useRouteProtector();
+  return (children)
+}
+
 function App() {  
+
+  const [userData,setUserData] = useState({username:"Sagar",email:"",avatarImage:""}) 
 
   return (
     <div className="App">
-      <Header/>
-      <hr/>
-      
-      <Routes>
-        <Route path="/about" element={<About />}></Route>
-        <Route path="/dashboard" element={<Dashboard />}></Route>
-        <Route path="/products" element={<ProductList />}></Route>
-        <Route path="/login" element={<Login />}></Route>
-        <Route path="/sign-up" element={<SignUp />}></Route>
-        <Route path="*" element={<NotFound />}></Route>
-      </Routes>
+      <UserDataContext.Provider value={userData}>
 
-     
+        <Header/>
+        <hr/>
+        
+        <Routes>
+          <Route path="/about" element={<About />}></Route>
+          <Route path="/dashboard" element={<Dashboard/>}></Route>
+          <Route path="/products" element={<ProtectedRoute><ProductList /></ProtectedRoute>}></Route>
+          <Route path="/login" element={<Login />}></Route>
+          <Route path="/sign-up" element={<SignUp />}></Route>
+          <Route path="*" element={<NotFound />}></Route>
+        </Routes>
+
+      </UserDataContext.Provider>
     </div>
   );
 }

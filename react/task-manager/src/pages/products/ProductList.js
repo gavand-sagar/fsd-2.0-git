@@ -1,9 +1,8 @@
 import React from "react";
-import useRouteProtector from "../../shared/hooks/useRouteProtector";
-import Product from "./Product";
+import FormDemo from "../../shared/components/FormDemo";
+import HeadingPortal from "../../shared/portal/HeadingPortal";
 
 export default function ProductList() {
-  useRouteProtector();
   let products = [
     {
       name: "Apple iPhone 11",
@@ -20,9 +19,13 @@ export default function ProductList() {
   ];
   return (
     <div>
-      {products.map((x) => (
+      {/* {products.map((x) => (
         <Product name={x.name} specifications={x.specs} />
-      ))}
+      ))} */}
+
+      <HeadingPortal></HeadingPortal>
+
+      <FormDemo></FormDemo>
     </div>
   );
 }
