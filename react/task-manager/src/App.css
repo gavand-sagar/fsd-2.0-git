@@ -91,3 +91,7 @@ body{
   padding:5px;
   margin: 5px;
 }
+
+.border{
+  border:5px solid red
+}

@@ -11,6 +11,9 @@ export default function Header() {
       <Link to={"/products"}>
         <button>Products</button>
       </Link>
+      <Link to={"/cat-fact"}>
+        <button>Cat Fact</button>
+      </Link>
       <Link to={"/about"}>
         <button>About</button>
       </Link>
