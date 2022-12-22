@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 
 export default function CatFact() {
@@ -6,11 +6,27 @@ export default function CatFact() {
 
   function getFact() {
     console.log('A')
-    commonFetch("https://catfact.ninja/fact").then((response) => {
-      setFact(response.fact);
-    });
+
+    getMobiles().then((mobiles)=>{
+      //mobiles are available here and will be there after 3000 millis
+      
+    })
+    // commonFetch("https://catfact.ninja/fact").then((response) => {
+    //   setFact(response.fact);
+    // });
     console.log('B')
   }
+
+
+  useEffect(()=>{
+    //this is on page load
+  },[])
+
+  useEffect(()=>{
+    //this is on page load
+    // as well as when fact changes
+  },[fact])
+
 
 
   async function getFactAsync() {
